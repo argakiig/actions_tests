@@ -24,9 +24,9 @@ jobs:
 
       - name: tag
         run: |
-          echo 'TAG<<EOF' >> $GITHUB_ENV
-          `git describe --tags $GITHUB_SHA` >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
+          echo "git describe --tags $GITHUB_SHA" >> $TAG
+          echo "$TAG"
+          echo "TAG=$TAG" >> $GITHUB_ENV
       
       - name: print tag
         run: echo "$TAG"
