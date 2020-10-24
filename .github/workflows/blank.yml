@@ -24,7 +24,7 @@ jobs:
 
       - name: tag
         run: |
-          echo "git describe --tags $GITHUB_SHA" >> $TAG
+          TAG=`git describe --tags $GITHUB_SHA`
           echo "$TAG"
           echo "TAG=$TAG" >> $GITHUB_ENV
       
